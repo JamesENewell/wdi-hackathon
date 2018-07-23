@@ -5,7 +5,7 @@
       <form v-on:submit.prevent="handleSubmit()">
         <label for="search">What are you looking for?</label>
         <input class="input" type="text" v-model="search.textInput"></input>
-        <p>Message goes here {{ textInput}}</p>
+        <p>Message goes here {{ search.textInput}}</p>
         <select v-model="search.type">
           <option value="bar">Bar</option>
           <option value="gym">Gym</option>
@@ -53,7 +53,6 @@ export default {
   },
   watch:{
     search(){
-      console.log('this');
     }
   },
   methods: {
