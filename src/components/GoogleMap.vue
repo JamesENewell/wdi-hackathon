@@ -6,11 +6,11 @@
 /* global google*/
 export default {
   name: 'GoogleMap',
-  props: ['center', 'venues'],
+  props: ['center', 'places'],
   mounted() {
     this.map = new google.maps.Map(this.$el, {
       center: this.center || { lat: 51.515, lng: -0.078 },
-      zoom: 14
+      zoom: 2
     });
 
     this.infoWindow = new google.maps.InfoWindow();
@@ -25,6 +25,16 @@ export default {
       const marker = new google.maps.Marker({
         position: place.location,
         map: this.map
+      });
+
+      marker.addListener('click', () => {
+        this.infoWindow.setContent(`
+          <a href="/#/venues/${venue._id}">
+          <h3>${venue.name}</h3>
+        <p>${venue.address}</p>
+        </a>
+        `);
+        this.infoWindow.open(this.map, marker);
       });
 
     });
