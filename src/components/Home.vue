@@ -10,7 +10,7 @@
           <option value="lang">Languages</option>
         </select>
         <p>Message goes here {{ search.textInput}}</p>
-        <button name="button" v-on:click="handleSubmit">El Submit</button>
+        <button type="button" name="button" v-on:click="handleSubmit">El Submit</button>
       </form>
       <GoogleMap v-bind:places="places" />
 
@@ -27,6 +27,8 @@ export default {
   data() {
     return {
       search: {
+        textInput: '',
+        type: ''
       },
       results: {
 
@@ -48,14 +50,13 @@ export default {
       })
         .then(res => {
           const places = res.data.map(country => {
-            return location = {
-              location: {
+              return {location: {
                 lat: country.latlng[0],
                 lng: country.latlng[1]
-              }
-            }
+              }}
           })
-          console.log(res);
+          this._data.results = places;
+          console.log(this._data.results); 
         })
     },
     handlePlaceChange({ formatted_address: address, geometry: { location } }) {
