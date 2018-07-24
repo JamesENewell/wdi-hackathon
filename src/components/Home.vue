@@ -68,6 +68,6 @@ export default {
 
 <style>
 .map {
-  height: calc(100vh - 52px);
+  height: calc(70vh);
 }
 </style>
