@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container">
       <h1>Newgle</h1>
-      <form>
+      <form class="searchBar">
         <label for="search">What are you looking for?</label>
         <input class="input" type="text" v-model="search.textInput"></input>
         <select v-model="search.type">
@@ -70,5 +70,8 @@ export default {
 <style>
 .map {
   height: calc(70vh);
+}
+form.searchBar {
+  padding-bottom: 30px;
 }
 </style>
