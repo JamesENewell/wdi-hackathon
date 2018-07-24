@@ -23,8 +23,17 @@ export default {
     this.bounds = new google.maps.LatLngBounds();
     this.markers = this.places.map(place => {
       this.bounds.extend(place.location);
+
+      var logo = document.createElement('img');
+
+      logo.src = `${place.flag}`;
+      logo.height = "20px";
+      logo.width = "40px";
+      var icon = logo
+
       const marker = new google.maps.Marker({
         position: place.location,
+        icon: icon,
         map: this.map
       });
       marker.addListener('click', () => {
