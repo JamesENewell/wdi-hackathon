@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <h1>Newgle</h1>
+      <h1 class="title is-1">Newgle</h1>
       <form class="searchBar">
         <label for="search">What are you looking for?</label>
         <input class="input" type="text" v-model="search.textInput"></input>
@@ -9,8 +9,9 @@
           <option value="currency">Currency</option>
           <option value="lang">Languages</option>
           <option value="regionalbloc">Regional Bloc</option>
+          <option value="name">Country</option>
         </select>
-        <button type="button" name="button" v-on:click="handleSubmit">Submit</button>
+        <button class="button" type="button" name="button" v-on:click="handleSubmit">Submit</button>
       </form>
       <google-map v-bind:places="places" />
 
@@ -78,5 +79,14 @@ export default {
 }
 form.searchBar {
   padding-bottom: 30px;
+}
+input.input:focus{
+  background-color: rgba(255,182,193, 0.2);
+}
+
+button.button{
+  float: right;
+  background-color: rgba(255,182,193, 0.5);
+  color: white;
 }
 </style>
