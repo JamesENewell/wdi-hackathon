@@ -54,7 +54,12 @@ export default {
               return country;
             }
           }).map(country => {
-              return {location: {
+            console.log(country);
+              return {
+                name: country.name,
+                capital: country.capital,
+                flag: country.flag,
+                location: {
                 lat: country.latlng[0],
                 lng: country.latlng[1]
               }}

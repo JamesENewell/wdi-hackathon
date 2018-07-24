@@ -29,10 +29,9 @@ export default {
       });
       marker.addListener('click', () => {
         this.infoWindow.setContent(`
-          <a href="/#/venues/${venue._id}">
-          <h3>${venue.name}</h3>
-        <p>${venue.address}</p>
-        </a>
+          <img src=${place.flag} heigh=30 width=60 />
+          <h3>${place.name}</h3>
+          <p>${place.capital}</p>
         `);
         this.infoWindow.open(this.map, marker);
       });
