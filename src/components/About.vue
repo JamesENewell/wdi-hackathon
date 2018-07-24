@@ -26,16 +26,26 @@ export default {
     font-family: 'Mate SC', serif;
   }
   .titleContainer{
-    display: flex;
-    align-self: center; 
+    margin: 0 auto;
     width: max-content;
-    /* animation: show 3s forwards; */
     border-bottom: 2px solid  rgba(255,182,193, 0.2);
     margin-bottom: 10px;
   }
-
-  @keyframes show {
-    0% {width: 0px; },
-    100% {width: max-content }
+  img:hover{
+    animation: wiggle 2s infinite;
+}
+  @keyframes wiggle {
+    0% {transform: rotate(5deg); }
+    10% {transform: rotate(0deg); }
+    20% {transform: rotate(-5deg); }
+    30% {transform: rotate(0deg); }
+    40% {transform: rotate(5deg); }
+    50% {transform: rotate(0deg); }
+    60% {transform: rotate(-5deg); }
+    70% {transform: rotate(0deg); }
+    80% {transform: rotate(5deg); }
+    90% {transform: rotate(0deg); }
+    95% {transform: rotate(-5deg); }
+    100% {transform: rotate(0deg); }
   }
 </style>

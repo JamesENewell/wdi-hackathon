@@ -4,6 +4,7 @@
 
 <script>
 /* global google*/
+import axios from 'axios';
 export default {
   name: 'GoogleMap',
   props: ['center', 'places'],
@@ -113,10 +114,16 @@ export default {
         map: this.map,
       });
       marker.addListener('click', () => {
+        // axios({
+        //   method: 'GET',
+        //   url: `https://api.darksky.net/forecast/11c8ee4ed2b6244244155cdfcb7da2f7/${place.location.lat},${place.location.lng}`
+        // })
+        // .then(res => console.log(res)); 
         this.infoWindow.setContent(`
           <img src=${place.flag} heigh=30 width=60 />
           <h3>${place.name}</h3>
-          <p>${place.capital}</p>
+          <p>Capital: ${place.capital}</p>
+          <p>Population: ${place.population}</p>
         `);
         this.infoWindow.open(this.map, marker);
       });

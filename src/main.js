@@ -9,11 +9,13 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 import Home from './components/Home';
 import About from './components/About';
+import Show from './components/Show';
 //link components here
 
 const routes = [
   { path: '/' , component: Home },
-  { path: '/about' , component: About }
+  { path: '/about' , component: About },
+  { path: '/country/:name' , component: Show }
 ];
 
 
