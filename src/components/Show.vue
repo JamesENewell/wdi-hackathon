@@ -5,11 +5,11 @@
         <h1 class="title is-1">{{this.country[0].name}}</h1>
       </div>
       <div class="columns">
-        <div class="column">
+        <div class="column flagColumn">
           <img class="showFlag" v-bind:src="this.country[0].flag" alt="">
         </div>
-        <div class="column">
-          <h2 class="title is-2">Information</h2>
+        <div class="column infoColumn">
+          <!-- <h2 class="title is-2">Information</h2> -->
           <ul>
             <li><strong>Capital:</strong> {{this.country[0].capital}}</li>
             <li><strong>Region:</strong> {{this.country[0].region}}</li>
@@ -52,5 +52,29 @@ export default {
   }
   .titleContainer.showTitle{
     margin-bottom: 25px;
+    animation: slideInTop 2s;
+  }
+  li{
+    font-size: 1.5rem;
+  }
+
+  .column.flagColumn{
+    animation: slideInLeft 2s;
+  }
+
+  .column.infoColumn{
+    animation: slideInRight 2s;
+  }
+  @keyframes slideInTop {
+    0% {transform: translate(0,-100px);}
+    100% {transform: translate(0,0);}
+  }
+  @keyframes slideInLeft {
+    0% {transform: translate(-500px,0);}
+    100% {transform: translate(0,0);}
+  }
+  @keyframes slideInRight {
+    0% {transform: translate(500px,0);}
+    100% {transform: translate(0,0);}
   }
 </style>

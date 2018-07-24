@@ -10,7 +10,7 @@
         <select v-model="search.type">
           <option disabled value="">Please select a search type</option>
           <option value="currency">Currency</option>
-          <option value="lang">Languages</option>
+          <option value="lang">Language</option>
           <option value="regionalbloc">Regional Bloc</option>
           <option value="name">Country</option>
         </select>
