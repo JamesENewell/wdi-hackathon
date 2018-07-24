@@ -9,7 +9,7 @@
           <option value="currency">Currency</option>
           <option value="lang">Languages</option>
         </select>
-        <button type="button" name="button" v-on:click="handleSubmit">El Submit</button>
+        <button type="button" name="button" v-on:click="handleSubmit">Submit</button>
       </form>
       <google-map v-bind:places="places" />
 
@@ -48,7 +48,11 @@ export default {
         url:`https://restcountries.eu/rest/v2/${this._data.search.type}/${this._data.search.textInput}`
       })
         .then(res => {
-          const places = res.data.map(country => {
+          const places = res.data.filter(country =>{
+            if (country.latlng[0] && country.latlng[1]) {
+              return country;
+            }
+          }).map(country => {
               return {location: {
                 lat: country.latlng[0],
                 lng: country.latlng[1]
