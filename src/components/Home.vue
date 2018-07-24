@@ -10,10 +10,9 @@
           <option value="lang">Languages</option>
           <option value="regionalbloc">Regional Bloc</option>
         </select>
-        <p>Message goes here {{ search.textInput}}</p>
-        <button type="button" name="button" v-on:click="handleSubmit">El Submit</button>
+        <button type="button" name="button" v-on:click="handleSubmit">Submit</button>
       </form>
-      <GoogleMap v-bind:places="places" />
+      <google-map v-bind:places="places" />
 
     </div>
   </section>
@@ -31,7 +30,7 @@ export default {
         textInput: '',
         type: ''
       },
-      results: {
+      places: {
 
       }
     }
@@ -50,26 +49,26 @@ export default {
         url:`https://restcountries.eu/rest/v2/${this._data.search.type}/${this._data.search.textInput}`
       })
         .then(res => {
-          const places = res.data.map(country => {
+          const places = res.data.filter(country =>{
+            if (country.latlng[0] && country.latlng[1]) {
+              return country;
+            }
+          }).map(country => {
               return {location: {
                 lat: country.latlng[0],
                 lng: country.latlng[1]
               }}
           })
-          this._data.results = places;
-          console.log(this._data.results);
+          this._data.places = places;
+          console.log(this._data.places);
         })
     },
-    handlePlaceChange({ formatted_address: address, geometry: { location } }) {
-      this.venue.address = address;
-      this.venue.location = location.toJSON();
-    }
   },
 };
 </script>
 
 <style>
 .map {
-  height: calc(100vh - 52px);
+  height: calc(70vh);
 }
 </style>
