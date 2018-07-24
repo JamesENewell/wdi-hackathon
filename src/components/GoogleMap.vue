@@ -116,7 +116,8 @@ export default {
         this.infoWindow.setContent(`
           <img src=${place.flag} heigh=30 width=60 />
           <h3>${place.name}</h3>
-          <p>${place.capital}</p>
+          <p>Capital: ${place.capital}</p>
+          <p>Population: ${place.population}</p>
         `);
         this.infoWindow.open(this.map, marker);
       });

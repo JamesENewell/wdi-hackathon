@@ -60,6 +60,7 @@ export default {
                 name: country.name,
                 capital: country.capital,
                 flag: country.flag,
+                population: country.population,
                 location: {
                 lat: country.latlng[0],
                 lng: country.latlng[1]
