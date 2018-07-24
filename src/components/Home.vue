@@ -8,6 +8,7 @@
         <select v-model="search.type">
           <option value="currency">Currency</option>
           <option value="lang">Languages</option>
+          <option value="regionalbloc">Regional Bloc</option>
         </select>
         <p>Message goes here {{ search.textInput}}</p>
         <button type="button" name="button" v-on:click="handleSubmit">El Submit</button>
@@ -56,7 +57,7 @@ export default {
               }}
           })
           this._data.results = places;
-          console.log(this._data.results); 
+          console.log(this._data.results);
         })
     },
     handlePlaceChange({ formatted_address: address, geometry: { location } }) {
