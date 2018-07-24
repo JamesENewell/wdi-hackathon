@@ -1,9 +1,56 @@
 <template>
   <div id="app">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" v-bind:class="{ 'is-active': navIsOpen }" v-on:click="toggleNav()">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" v-bind:class="{ 'is-active': navIsOpen }">
+        <div class="navbar-end">
+          <router-link to="/" class="navbar-item">Home</router-link>
+          <router-link to="/about" class="navbar-item">About</router-link>
+        </div>
+      </div>
+    </nav>
     <router-view></router-view>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'app',
+  data() {
+    return { navIsOpen: false };
+  },
+  methods: {
+    toggleNav() {
+      this.navIsOpen = !this.navIsOpen;
+    }
+  },
+  watch: {
+    '$route'() {
+      this.navIsOpen = false;
+    }
+  }
+};
 
-<style></style>
+</script>
+
+<style>
+
+html{
+  background-color: aliceBlue;
+}
+nav.navbar{
+  border-bottom: 2px solid rgba(255,182,193, 0.2);
+}
+
+a.navbar-item:hover{
+  background-color:  rgba(255,182,193, 0.2) !important;
+  color: black !important;
+}
+
+</style>
