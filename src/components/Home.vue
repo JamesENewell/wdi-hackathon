@@ -55,7 +55,6 @@ export default {
               return country;
             }
           }).map(country => {
-            console.log(country);
               return {
                 name: country.name,
                 capital: country.capital,
@@ -67,7 +66,6 @@ export default {
               }}
           })
           this._data.places = places;
-          console.log(this._data.places);
         })
     },
   },

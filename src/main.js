@@ -15,7 +15,7 @@ import Show from './components/Show';
 const routes = [
   { path: '/' , component: Home },
   { path: '/about' , component: About },
-  { path: '/country/:name' , component: Show }
+  { path: '/country/:name' ,props: true, component: Show }
 ];
 
 
