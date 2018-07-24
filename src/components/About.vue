@@ -4,6 +4,7 @@
       <div class="titleContainer">
         <h1 class="title is-1">THE THREE VUE-SKETEERS</h1>
       </div>
+      <p class="aboutParagraph">Now, this is a story all about how, My life got flipped-turned upside down, And I'd like to take a minute, Just sit right there, I'll tell you how I became one of the three Vue-sketeers</p>
       <img src="../assets/images/ThreeMusketeers.jpg"/>
     </div>
 
@@ -18,7 +19,7 @@ export default {
 </script>
 
 
-<style>
+<style >
   h1{
     text-align: center;
   }
@@ -47,5 +48,9 @@ export default {
     90% {transform: rotate(0deg); }
     95% {transform: rotate(-5deg); }
     100% {transform: rotate(0deg); }
+  }
+
+  p.aboutParagraph {
+    padding: 20px 0 20px 0;
   }
 </style>
