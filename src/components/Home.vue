@@ -1,17 +1,20 @@
 <template>
   <section class="section">
     <div class="container">
-      <h1 class="title is-1">Newgle</h1>
+      <div class="titleContainer">
+        <h1 class="title is-1">Newgle</h1>
+      </div>
       <form class="searchBar">
         <label for="search">What are you looking for?</label>
         <input class="input" type="text" v-model="search.textInput"></input>
         <select v-model="search.type">
+          <option disabled value="">Please select a search type</option>
           <option value="currency">Currency</option>
           <option value="lang">Languages</option>
           <option value="regionalbloc">Regional Bloc</option>
           <option value="name">Country</option>
         </select>
-        <button class="button" type="button" name="button" v-on:click="handleSubmit">Submit</button>
+        <button class="button" type="button" name="button" v-on:click="handleSubmit">Search</button>
       </form>
       <google-map v-bind:places="places" />
 
@@ -75,6 +78,7 @@ export default {
 <style>
 .map {
   height: calc(70vh);
+  animation: fadeIn 2s forwards;
 }
 form.searchBar {
   padding-bottom: 30px;
@@ -82,10 +86,26 @@ form.searchBar {
 input.input:focus{
   background-color: rgba(255,182,193, 0.2);
 }
+input.input{
+    margin-bottom: 10px;
+}
 
 button.button{
   float: right;
   background-color: rgba(255,182,193, 0.5);
-  color: white;
+  color: black;
+}
+
+button.button:hover{
+  border: 1px inset pink;
+}
+
+@keyframes fadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+select{
+  font-family: 'Mate SC', serif;
 }
 </style>

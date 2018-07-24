@@ -1,20 +1,20 @@
 <template>
   <section class="section">
     <div class="container">
-      <div class="titleContainer">
+      <div class="titleContainer showTitle">
         <h1 class="title is-1">{{this.country[0].name}}</h1>
       </div>
       <div class="columns">
         <div class="column">
-          <img v-bind:src="this.country[0].flag" alt="">
+          <img class="showFlag" v-bind:src="this.country[0].flag" alt="">
         </div>
         <div class="column">
           <h2 class="title is-2">Information</h2>
           <ul>
-            <li>Capital: {{this.country[0].capital}}</li>
-            <li>Region: {{this.country[0].region}} </li>
-            <li>Population: {{this.country[0].population}}</li>
-            <li>Native Name: {{this.country[0].nativeName}}</li>
+            <li><strong>Capital:</strong> {{this.country[0].capital}}</li>
+            <li><strong>Region:</strong> {{this.country[0].region}}</li>
+            <li><strong>Population:</strong> {{this.country[0].population}}</li>
+            <li><strong>Native Name:</strong> {{this.country[0].nativeName}}</li>
           </ul>
         </div>
       </div>
@@ -47,5 +47,10 @@ export default {
 
 
 <style>
-
+  img.showFlag{
+    border: 3px solid rgba(255,182,193, 0.2);
+  }
+  .titleContainer.showTitle{
+    margin-bottom: 25px;
+  }
 </style>
