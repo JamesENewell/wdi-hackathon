@@ -9,7 +9,6 @@
           <img class="showFlag" v-bind:src="this.country[0].flag" alt="">
         </div>
         <div class="column infoColumn">
-          <!-- <h2 class="title is-2">Information</h2> -->
           <ul>
             <li><strong>Capital:</strong> {{this.country[0].capital}}</li>
             <li><strong>Region:</strong> {{this.country[0].region}}</li>

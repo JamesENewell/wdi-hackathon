@@ -61,6 +61,7 @@ a.navbar-item:hover{
 img.globe{
   height: 50px;
   width: auto;
+  clip: rect(0px,60px,200px,0px);
 }
 
 .globeContainer{

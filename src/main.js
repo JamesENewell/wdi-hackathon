@@ -10,7 +10,6 @@ Vue.use(VueRouter);
 import Home from './components/Home';
 import About from './components/About';
 import Show from './components/Show';
-//link components here
 
 const routes = [
   { path: '/' , component: Home },
